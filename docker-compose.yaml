@@ -3,7 +3,7 @@ version: "2"
 services:
   letsencrypt:
     image: linuxserver/letsencrypt
-    container_name: le
+    container_name: letsencrypt
     volumes:
       - /opt/appdata/letsencrypt/config:/config
     ports:
@@ -24,6 +24,8 @@ services:
     depends_on:
       - blog
     mem_limit: 256m
+    cap_add: 
+      - NET_ADMIN
     restart: always
   blog:
     image: ghost:2-alpine
