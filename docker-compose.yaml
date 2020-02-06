@@ -28,7 +28,7 @@ services:
       - NET_ADMIN
     restart: always
   blog:
-    image: ghost:2-alpine
+    image: ghost:3-alpine
     container_name: blog
     volumes:
       - /opt/appdata/blog:/var/lib/ghost/content
